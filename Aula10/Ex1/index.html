@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Conteúdo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        #contentArea {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .addP {}
+
+
+        img {
+            width: 100px;
+            height: auto;
+            margin: 5px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Praticando 1 - Manipulações</h1>
+        <!-- Botões de Lado -->
+
+
+        <div class="d-flex justify-content-around mt-4">
+            <div>
+                <p>&nbsp;</p>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" value="1" id="btnradio1" autocomplete="off"
+                        checked>
+                    <label class="btn btn-outline-primary" for="btnradio1" value="2">Esquerda</label>
+    
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Direita</label>
+                </div>
+            </div>
+            <div>
+                <div class="section-title">Parágrafos</div>
+                <button id="addParagraph" onclick="adicionarParagrafo()"
+                    class="btn btn-primary btn-sm me-2">Adicionar</button>
+                <button id="removeFirstParagraph" onclick="removerParagrafoPrimeiro()"
+                    class="btn btn-primary btn-sm me-2">Remover primeiro</button>
+                <button id="removeLastParagraph" class="btn btn-primary btn-sm me-2"
+                    onclick="removerParagrafoUltimo()">Remover último</button>
+                <button id="removeAllParagraphs" class="btn btn-primary btn-sm"
+                    onclick="removerParagrafoTodos()">Remover todos</button>
+            </div>
+            <div>
+                <div class="section-title">Imagens</div>
+                <button id="addImage" onclick="adicionarImagem()" class="btn btn-primary btn-sm me-2">Adicionar</button>
+                <button id="removeOneImage" onclick="removerImagem()" class="btn btn-primary btn-sm me-2">Remover
+                    uma</button>
+                <button id="removeAllImages" onclick="removerImagemTodos()" class="btn btn-primary btn-sm">Remover
+                    todas</button>
+            </div>
+        </div>
+        <div class="addP">
+
+
+        </div>
+
+        <!-- Áreas de Conteúdo -->
+
+    </div>
+    <script>
+        var i = 0;
+        function adicionarParagrafo() {
+            var div = document.querySelector(".addP");
+            var paragrafo = document.createElement("p");
+            paragrafo.textContent = `#${i} - Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
+            div.appendChild(paragrafo);
+            paragrafo.classList.add("paragrafo");
+            i = i + 1;
+            b = i;
+        }
+
+        function removerParagrafoPrimeiro() {
+            var div = document.querySelector(".addP");
+            var paragrafo = div.querySelectorAll(".paragrafo");
+
+            div.removeChild(paragrafo[0]);
+
+        }
+
+
+        function removerParagrafoUltimo() {
+            var div = document.querySelector(".addP");
+            var paragrafo = div.querySelectorAll(".paragrafo");
+            var ultimoParagrafo = paragrafo[paragrafo.length - 1];
+            div.removeChild(ultimoParagrafo);
+
+        }
+        function removerParagrafoTodos() {
+            var div = document.querySelectorAll("p");
+            div.forEach(function (p) {
+                p.remove();
+            })
+        }
+
+        function adicionarImagem() {
+            var div = document.querySelector(".addP");
+            var img = document.createElement("img");
+            img.src = "image.png";
+            img.alt = "Imagem de gato"
+            div.appendChild(img);
+            img.classList.add("imagem");
+        }
+
+        function removerImagem() {
+            var div = document.querySelector(".addP");
+            var img = div.querySelectorAll(".imagem");
+            console.log(img)
+            var ultimaImagem = img[img.length - 1];
+            div.removeChild(ultimaImagem);
+        }
+
+        function removerImagemTodos() {
+            var div = document.querySelectorAll("img");
+            div.forEach(function (img) {
+                img.remove();
+            })
+        }
+
+        function alterarLado() {
+            var div = document.querySelector(".addP");
+            var radioEsquerda = document.getElementById("btnradio1");
+            var radioDireita = document.getElementById("btnradio2");
+
+            // Altera a posição com base no rádio selecionado
+            if (radioEsquerda.checked) {
+                div.style.textAlign = "left"; // Alinha à esquerda
+            } else if (radioDireita.checked) {
+                div.style.textAlign = "right"; // Alinha à direita
+            }
+        }
+
+        document.querySelectorAll('input[name="btnradio"]').forEach(radio => {
+            radio.addEventListener('change', alterarLado); // Chama a função quando a seleção mudar
+        });
+
+        // Chama a função inicial ao carregar
+        alterarLado();
+
+
+
+
+    </script>
+</body>
+
+</html>

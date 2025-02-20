@@ -1,0 +1,40 @@
+body{
+    background-color: aqua;
+}
+
+    table, td{
+        border: solid 1px red;
+    }
+
+
+    td{
+        padding: 30px 60px;
+        text-align: center;
+        
+    }
+
+.linha1{
+    background-color: green;
+}
+
+.linha2{
+    background-color: red;
+}
+
+.linha3{
+    background-color: blue;
+}
+
+.linha4{
+    background-color: yellow;
+}
+
+.legenda{
+    background-color: white;
+}
+
+.legenda td{
+    
+    padding: 3px 20px;
+    text-align: center;
+}

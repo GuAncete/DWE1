@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Página</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #conteudo {
+            margin-top: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulo">Bem-vindo!</h1>
+    <div id="conteudo"></div>
+    <button id="adicionar">Adicionar Parágrafo Lorem</button>
+    <button id="apagar">Apagar Parágrafos</button>
+
+    <script >// Solicita o nome do usuário
+        const nomeUsuario = prompt("Qual é o seu nome?");
+        if (nomeUsuario) {
+            document.getElementById("titulo").textContent = `Bem-vindo, ${nomeUsuario}!`;
+        }
+        
+        // Seleciona elementos
+        const conteudoDiv = document.getElementById("conteudo");
+        const botaoAdicionar = document.getElementById("adicionar");
+        const botaoApagar = document.getElementById("apagar");
+        
+        // Função para adicionar parágrafo
+        botaoAdicionar.addEventListener("click", () => {
+            const paragrafo = document.createElement("p");
+            paragrafo.textContent =
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id urna nec erat feugiat ullamcorper.";
+            conteudoDiv.appendChild(paragrafo);
+        });
+        
+        // Função para remover todos os parágrafos
+        botaoApagar.addEventListener("click", () => {
+            conteudoDiv.innerHTML = "";
+        });
+        </script>
+</body>
+</html>

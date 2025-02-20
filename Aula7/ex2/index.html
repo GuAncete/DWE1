@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: rgb(116, 221, 81);
+        background: linear-gradient(90deg, rgba(116, 221, 81, 1) 64%, rgba(0, 255, 253, 1) 100%);
+        
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        background-image: url("pngegg.png");
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: 50%;
+    }
+
+    .linguagem {
+        display: flex;
+        align-items: center;
+    }
+
+    .botoes {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .botoes * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .linha {
+        margin-right: 2vh;
+    }
+
+    .check {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .botao {
+        background-color: white;
+        border-radius: 1vh;
+        height: 50px;
+        width: 100px;
+    }
+
+    .fim{
+        display: flex;
+        gap: 3vh;
+    }
+</style>
+
+<body>
+    <h1>Praticando 2 - Formulário HTML Estilizado</h1>
+    <div class="container">
+        <div class="formulario">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text">
+            <br><br>
+            <label for="E-mail">E-mail</label>
+            <input id="E-mail" type="text" placeholder="seu@email.aqui">
+            <br><br>
+            <label for="carro">Marca de carro preferida</label>
+            <select name="carro" id="carro">
+                <option value="1">Chevrolet</option>
+                <option value="2">BMW</option>
+                <option value="3">Fusca</option>
+            </select>
+            <br><br>
+            <label for="observacoes">Observações</label>
+            <br>
+            <textarea name="observacoes" id="observacoes"></textarea>
+            <br><br>
+
+
+
+            <div class="linguagem">
+                <label class="linha" for="lingua">Linguagem Web favorita:</label>
+                <div class="botoes">
+                    <input type="radio" name="lingua" id="html"><label for="html"><img src="pngegg (1).png"
+                            width="100px" alt=""></label>
+                    <input type="radio" name="lingua" id="css"><label for="css"><img src="pngegg (2).png" width="100px"
+                            alt=""></label>
+                    <input type="radio" name="lingua" id="javas"><label for="javas"><img src="pngegg.png" width="100px"
+                            alt=""></label>
+                </div>
+            </div>
+
+
+
+            <br><br>
+            <div class="check">
+                <label for="filme">Filmes que eu quero ver quando lançar:</label>
+
+                <div class="conteudo">
+                    <input type="checkbox" name="capitao[]" id="capitao"><label for="capitao">Capitão América:
+                        Admirável
+                        Mundo
+                        Novo</label>
+                    <br>
+                    <input type="checkbox" name="capitao" id="capitao"><label for="capitao">Avengers: The Kang
+                        Dynasty</label>
+                    <br>
+                    <input type="checkbox" name="capitao" id="capitao"><label for="capitao">O Auto da Compadecida
+                        2</label>
+                    <br>
+                    <input type="checkbox" name="capitao" id="capitao"><label for="capitao">Avatar 3: Fogo e
+                        Cinzas</label>
+                </div>
+
+            </div>
+
+            <br><br>
+            <div class="fim">
+                <button class="botao">Enviar</button>
+                <button class="botao">Limpar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

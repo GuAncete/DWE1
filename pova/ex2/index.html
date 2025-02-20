@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Conteúdo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        #contentArea {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .addP {
+            display: flex;
+
+        }
+
+
+        img {
+            width: 100px;
+            height: auto;
+            margin: 5px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .esquerda,
+        .direita {
+            width: 100vh;
+            height: 50vh;
+            display: flex;
+            justify-content: flex-start;
+            /* Alinhamento horizontal */
+            align-items: flex-start;
+            /* Alinhamento vertical */
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Praticando 1 - Manipulações</h1>
+        <!-- Botões de Lado -->
+
+
+        <div class="d-flex justify-content-around mt-4">
+            <div>
+                <p>&nbsp;</p>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" onclick="selecionarDiv()" class="btn-check" name="btnradio" value="1"
+                        id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1" value="2">Esquerda</label>
+
+                    <input type="radio" class="btn-check" onclick="selecionarDiv()" name="btnradio" id="btnradio2"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Direita</label>
+                </div>
+            </div>
+            <div>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" onclick="alterarLado()" class="btn-check" name="opcao" value="1" id="inicio"
+                        autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="inicio">Início</label>
+
+                    <input type="radio" class="btn-check" onclick="alterarLado()" name="opcao" value="2" id="final"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary" for="final">Final</label>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">Parágrafos</div>
+                <button id="addParagraph" onclick="adicionarParagrafo()"
+                    class="btn btn-primary btn-sm me-2">Adicionar</button>
+                <button id="removeFirstParagraph" onclick="removerParagrafoPrimeiro()"
+                    class="btn btn-primary btn-sm me-2">Remover</button>
+                
+            </div>
+            <div>
+                <div class="section-title">Imagens</div>
+                <button id="addImage" onclick="adicionarImagem()" class="btn btn-primary btn-sm me-2">Adicionar</button>
+                <button id="removeOneImage" onclick="removerImagem()" class="btn btn-primary btn-sm me-2">Remover
+                    uma</button>
+                <button id="removeAllImages" onclick="removerImagemTodos()" class="btn btn-primary btn-sm">Remover
+                    todas</button>
+            </div>
+        </div>
+        <div class="addP">
+            <div class="esquerda">
+
+            </div>
+            <div class="direita">
+
+            </div>
+
+        </div>
+
+        <!-- Áreas de Conteúdo -->
+
+    </div>
+    <script>
+        var i = 0;
+
+        function selecionarDiv() {
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var radioEsquerda = document.getElementById("btnradio1");
+            var radioDireita = document.getElementById("btnradio2");
+
+            // Redefine as cores das divs
+            divesq.style.background = "";
+            divdir.style.background = "";
+
+            // Aplica destaque à div correspondente
+            if (radioEsquerda.checked) {
+                divesq.style.background = "greenyellow";
+            } else if (radioDireita.checked) {
+                divdir.style.background = "greenyellow";
+            }
+        }
+
+
+
+        function adicionarParagrafo() {
+            var radioEsquerda = document.getElementById("btnradio1");
+            var radioDireita = document.getElementById("btnradio2");
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var paragrafo = document.createElement("p");
+            paragrafo.textContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`;
+            if (radioEsquerda.checked) {
+                divesq.appendChild(paragrafo);
+                paragrafo.classList.add("paragrafo");
+            } else if (radioDireita.checked) {
+                divdir.appendChild(paragrafo);
+                paragrafo.classList.add("paragrafo");
+            }
+            div.appendChild(paragrafo);
+            paragrafo.classList.add("paragrafo");
+            i = i + 1;
+            b = i;
+        }
+
+        function removerParagrafoPrimeiro() {
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var esquerda = document.getElementById("btnradio1");
+            var direita = document.getElementById("btnradio2");
+
+            if (esquerda.checked) {
+                var paragrafo = divesq.querySelectorAll(".paragrafo");
+                console.log(paragrafo)
+                var ultimaparagrafo = paragrafo[paragrafo.length - 1];
+                divesq.removeChild(ultimaparagrafo);
+            } else if (direita.checked) {
+                var paragrafo = divdir.querySelectorAll(".paragrafo");
+                console.log(paragrafo)
+                var ultimaparagrafo = paragrafo[paragrafo.length - 1];
+                divdir.removeChild(ultimaparagrafo);
+            }
+            
+
+
+
+
+        }
+
+
+        function removerParagrafoUltimo() {
+            var div = document.querySelector(".addP");
+            var paragrafo = div.querySelectorAll(".paragrafo");
+            var ultimoParagrafo = paragrafo[paragrafo.length - 1];
+            div.removeChild(ultimoParagrafo);
+
+        }
+        function removerParagrafoTodos() {
+            var div = document.querySelectorAll("p");
+            div.forEach(function (p) {
+                p.remove();
+            })
+        }
+
+        function adicionarImagem() {
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var radioEsquerda = document.getElementById("btnradio1");
+            var radioDireita = document.getElementById("btnradio2");
+
+            var img = document.createElement("img");
+            img.src = "image.png";
+            img.alt = "Imagem de gato"
+            if (radioEsquerda.checked) {
+
+                divesq.appendChild(img);
+                img.classList.add("imagem");  // Mostra a div esquerda
+            } else if (radioDireita.checked) {
+
+                divdir.appendChild(img);
+                img.classList.add("imagem"); // Oculta a div esquerda
+            }
+            div.appendChild(img);
+            img.classList.add("imagem");
+        }
+
+        function removerImagem() {
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var esquerda = document.getElementById("btnradio1");
+            var direita = document.getElementById("btnradio2");
+
+            if (esquerda.checked) {
+                var img = divesq.querySelectorAll(".imagem");
+                console.log(img)
+                var ultimaImagem = img[img.length - 1];
+                divesq.removeChild(ultimaImagem);
+            } else if (direita.checked) {
+                var img = divdir.querySelectorAll(".imagem");
+                console.log(img)
+                var ultimaImagem = img[img.length - 1];
+                divdir.removeChild(ultimaImagem);
+            }
+            
+        }
+
+        function removerImagemTodos() {
+            var div = document.querySelectorAll("img");
+            div.forEach(function (img) {
+                img.remove();
+            })
+        }
+
+        function alterarLado() {
+            var divesq = document.querySelector(".esquerda");
+            var divdir = document.querySelector(".direita");
+            var radioInicio = document.getElementById("inicio");
+            var radioFinal = document.getElementById("final");
+            var esquerda = document.getElementById("btnradio1");
+            var direita = document.getElementById("btnradio2");
+
+            if (esquerda.checked) {
+                if (radioInicio.checked) {
+                    divesq.style.justifyContent = "flex-start";
+                    divesq.style.alignItems = "flex-start";
+                } else if (radioFinal.checked) {
+                    divesq.style.justifyContent = "flex-end";
+                    divesq.style.alignItems = "flex-end";
+                }
+            } else if (direita.checked) {
+                if (radioInicio.checked) {
+                    divdir.style.justifyContent = "flex-start";
+                    divdir.style.alignItems = "flex-start";
+                } else if (radioFinal.checked) {
+                    divdir.style.justifyContent = "flex-end";
+                    divdir.style.alignItems = "flex-end";
+                }
+            }
+        }
+
+
+
+
+        document.querySelectorAll('input[name="btnradio"]').forEach(radio => {
+            radio.addEventListener('change', alterarLado); // Chama a função quando a seleção mudar
+        });
+
+        // Chama a função inicial ao carregar
+        alterarLado();
+
+
+
+
+    </script>
+</body>
+
+</html>

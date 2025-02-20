@@ -1,0 +1,27 @@
+.fundo{
+    background-color: gray;
+    height: 500px;
+    width: 100%;
+    border-bottom: 40px dashed;
+}
+
+.retangulo{
+    background-color: aqua;
+    border: 20px solid blue;
+  
+    margin-left: 25%;
+    height: 50%;
+    width: 50%;
+    padding-top: 3%;
+}
+
+.circulo{
+    background-color: white;
+    height: 75%;
+    width: 25%;
+    
+    margin-left: 35%;
+
+    border: 10px solid red;
+    border-radius: 100%;
+}

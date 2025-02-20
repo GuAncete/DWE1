@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculadora</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+        }
+        .form-control {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Mini Calculadora</h1>
+        <div class="mb-3">
+            <input type="number" id="numero1" class="form-control" placeholder="Primeiro número">
+        </div>
+        <div class="mb-3">
+            <input type="number" id="numero2" class="form-control" placeholder="Segundo número">
+        </div>
+        <div class="mb-3">
+            <input type="text" id="resultado" class="form-control" placeholder="Resultado" readonly>
+        </div>
+        <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-primary" id="somar">Somar</button>
+            <button class="btn btn-secondary" id="subtrair">Subtrair</button>
+            <button class="btn btn-success" id="multiplicar">Multiplicar</button>
+            <button class="btn btn-danger" id="dividir">Dividir</button>
+        </div>
+    </div>
+
+    <script >
+        
+const numero1 = document.getElementById("numero1");
+const numero2 = document.getElementById("numero2");
+const resultado = document.getElementById("resultado");
+
+document.getElementById("somar").addEventListener("click", () => {
+    const valor1 = parseFloat(numero1.value);
+    const valor2 = parseFloat(numero2.value);
+    if (!isNaN(valor1) && !isNaN(valor2)) {
+        resultado.value = valor1 + valor2;
+    } else {
+        alert("Por favor, insira números válidos.");
+    }
+});
+
+document.getElementById("subtrair").addEventListener("click", () => {
+    const valor1 = parseFloat(numero1.value);
+    const valor2 = parseFloat(numero2.value);
+    if (!isNaN(valor1) && !isNaN(valor2)) {
+        resultado.value = valor1 - valor2;
+    } else {
+        alert("Por favor, insira números válidos.");
+    }
+});
+
+document.getElementById("multiplicar").addEventListener("click", () => {
+    const valor1 = parseFloat(numero1.value);
+    const valor2 = parseFloat(numero2.value);
+    if (!isNaN(valor1) && !isNaN(valor2)) {
+        resultado.value = valor1 * valor2;
+    } else {
+        alert("Por favor, insira números válidos.");
+    }
+});
+
+document.getElementById("dividir").addEventListener("click", () => {
+    const valor1 = parseFloat(numero1.value);
+    const valor2 = parseFloat(numero2.value);
+    if (!isNaN(valor1) && !isNaN(valor2)) {
+        if (valor2 !== 0) {
+            resultado.value = valor1 / valor2;
+        } else {
+            alert("Não é possível dividir por zero.");
+        }
+    } else {
+        alert("Por favor, insira números válidos.");
+    }
+});
+
+    </script>
+</body>
+</html>

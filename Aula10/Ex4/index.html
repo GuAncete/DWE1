@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentação de Quadrados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            gap: 10px;
+        }
+        .quadrado {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .verde { background: green; left: 0; }
+        .azul { background: blue; left: 120px; }
+        .vermelho { background: red; left: 240px; }
+        .selecionado {
+            outline: 4px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quadrado verde" id="verde"></div>
+        <div class="quadrado azul" id="azul"></div>
+        <div class="quadrado vermelho" id="vermelho"></div>
+    </div>
+
+    <script>
+        let selecionado = null;
+        const velocidade = 10;
+
+        document.querySelectorAll('.quadrado').forEach(quadrado => {
+            quadrado.addEventListener('click', () => {
+                if (!selecionado) {
+                    selecionado = quadrado;
+                    selecionado.classList.add('selecionado');
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!selecionado) return;
+            const estilo = window.getComputedStyle(selecionado);
+            let left = parseInt(estilo.left);
+            let top = parseInt(estilo.top);
+
+            switch (e.key) {
+                case 'a': // Esquerda
+                    selecionado.style.left = `${left - velocidade}px`;
+                    break;
+                case 'd': // Direita
+                    selecionado.style.left = `${left + velocidade}px`;
+                    break;
+                case 'w': // Cima
+                    selecionado.style.top = `${top - velocidade}px`;
+                    break;
+                case 's': // Baixo
+                    selecionado.style.top = `${top + velocidade}px`;
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

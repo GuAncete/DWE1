@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Interativos</title>
+
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s ease;
+    }
+
+    .buttons {
+        margin-top: 5%;
+    }
+
+    .preview {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s ease, color 0.3s ease;
+        pointer-events: none;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+        transform: scale(1.1);
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .green {
+        background-color: green;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    .yellow {
+        background-color: yellow;
+        color: black;
+        
+    }
+
+    .pink {
+        background-color: pink;
+        color: black;
+        
+    }
+
+    .reset-button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: gray;
+        color: white;
+        cursor: pointer;
+    }
+
+    .reset-button:hover {
+        background-color: darkgray;
+    }
+</style>
+
+<body>
+    <div class="buttons">
+        <button class="button red" onmouseover="temporaryBackgroundColor('red')" onmouseout="restoreBackgroundColor()"
+            onclick="setPermanentBackgroundColor('red')">Vermelho</button>
+        <button class="button green" onmouseover="temporaryBackgroundColor('green')"
+            onmouseout="restoreBackgroundColor()" onclick="setPermanentBackgroundColor('green')">Verde</button>
+        <button class="button blue" onmouseover="temporaryBackgroundColor('blue')" onmouseout="restoreBackgroundColor()"
+            onclick="setPermanentBackgroundColor('blue')">Azul</button>
+        <button class="button yellow" onmouseover="temporaryBackgroundColor('yellow')"
+            onmouseout="restoreBackgroundColor()" onclick="setPermanentBackgroundColor('yellow')">Amarelo</button>
+        <button class="button pink" onmouseover="temporaryBackgroundColor('pink')" onmouseout="restoreBackgroundColor()"
+            onclick="setPermanentBackgroundColor('pink')">Rosa</button>
+    </div>
+    <div class="preview" id="preview">Preview</div>
+    <button class="reset-button" onclick="resetBackground()">Reset</button>
+    <script>
+        const previewElement = document.getElementById("preview");
+        let permanentColor = "white";
+
+        function temporaryBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+            previewElement.textContent = "Preview";
+            previewElement.style.opacity = "1";
+            previewElement.style.color = color;
+        }
+
+        function restoreBackgroundColor() {
+            document.body.style.backgroundColor = permanentColor;
+            previewElement.style.opacity = "0";
+        }
+
+        function setPermanentBackgroundColor(color) {
+            permanentColor = color;
+            document.body.style.backgroundColor = color;
+        }
+
+        function resetBackground() {
+            permanentColor = "white";
+            document.body.style.backgroundColor = "white";
+            previewElement.style.opacity = "0";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+.ex1{
+    background-color: aqua;
+    background-image: url('gato.png');
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-y: 100%;
+    height: 700px;
+}
+
+#secao1{
+    background-color: red;
+}
+
+.secao2{
+    background-image: url('gato.png');
+    background-repeat: repeat;
+    background-size: 35px;
+    background-color: gray;
+    color: blue;
+    
+    
+    
+}
+
+#secao3{
+    background-color: greenyellow;
+    opacity: 0.6;
+}
+
+#tabela2 tr td{
+    
+}
+

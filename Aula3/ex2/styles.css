@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#vermelho{
+    background-color: red;
+
+}
+#vermelhoClaro{
+    background-color: rgb(255, 97, 97);
+    padding-bottom: ;
+}
+#vermelhoEscuro{
+    background-color: darkred;
+}
+
+#verde{
+    background-color: green;
+}
+
+#verdeClaro{
+    background-color: lightgreen;
+}
+
+#verdeEscuro{
+    background-color: darkgreen;
+}
+
+.p3{
+    padding: 10px 0;
+}
+
+.p1{
+    padding-bottom: 20px;
+}
+
+.p2{
+    padding-top: 20px;
+}

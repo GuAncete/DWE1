@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lâmpada Interativa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            flex-direction: column;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <img src="apagada.png" alt="Lâmpada" id="lampada">
+    <p id="descricao">Lâmpada apagada</p>
+
+    <script>
+        const lampada = document.getElementById('lampada');
+        const descricao = document.getElementById('descricao');
+        let acesa = false;
+
+        lampada.addEventListener('click', () => {
+            acesa = !acesa;
+            document.body.style.background = acesa ? 'white' : 'black';
+            descricao.textContent = acesa ? 'Lâmpada acesa' : 'Lâmpada apagada';
+            lampada.src = acesa ? 
+                'image.png' : 
+                'apagada.png';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.quadrado{
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    margin: 2vh;
+    float: right;
+}
+
+.retangulo{
+    
+    background-color: green;
+    height: 100px;
+    width: 300px;
+}
+
+.clear{
+    clear: right;
+}
+
+.retangulo{
+    float: left;
+    margin: 2vh;
+}
+
+.clear1{
+    clear: left;
+}
+
+
+.retangulo1{
+    float: left;
+    background-color: green;
+    margin: 2vh;
+    height: 300px;
+    width: 100px;
+}
+
+.retangulo2{
+    float: right;
+    background-color: green;
+    margin: 2vh;
+    height: 300px;
+    width: 100px;
+}

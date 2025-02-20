@@ -1,0 +1,40 @@
+p{
+    color: red;
+}
+
+td{
+    color: green;
+}
+
+table, td{
+    border: 1px solid red;
+}
+
+.tabela1 td, table{
+    color: black;
+    border: 1px solid black;
+}
+
+.tabela1_linha1{
+    background-color: green;
+
+}
+
+.tabela1_linha2{
+    background-color: rgb(98, 241, 98);
+}
+
+.tabela2 td{
+    color: white;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.tabela2_linha1 td{
+    background-color: rgb(107, 104, 104);
+}
+
+
+.tabela2_linha2 td{
+    background-color: rgb(185, 182, 182);
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rubik+Wet+Paint&display=swap');
+
+*{
+    margin: 0 0 2vh 0;
+    padding: 0;
+}
+
+body{
+    background-color: orange;
+    font-size: large;
+    font-family: "Rubik Wet Paint", system-ui;
+
+}
+
+.container{
+    background-color: purple;
+    height: 100vh;
+    margin: 0 5% 0 5%;
+   
+}
+
+p{
+    margin: 2vh;
+}
+
+h1{
+    padding-top: 2vh;
+    padding-left: 2vh;
+}
+
+
+#fantasma{
+    height: 200px;
+    float: right;
+    margin-left: 5vh;
+    margin-right: 2vh;
+}
+
+#abobora{
+    margin: 2vh;
+    margin-top: 0;
+    margin-right: 5vh;
+    height: 200px;
+    float: left;
+    
+}
+
+.clear{
+    clear: left;
+}

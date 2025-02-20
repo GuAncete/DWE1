@@ -1,0 +1,35 @@
+body {
+    background-color: darkgray;
+}
+
+.saopaulo {
+    background-color: rgba(255,236,200,255);
+    margin-bottom: 10px;
+}
+
+.saopaulo p, .saopaulo h2, .saopaulo h3 {
+    color: red;
+}
+
+.yellowEmphasis {
+    background-color: yellow;
+    color: black;
+}
+
+.riodejaneiro {
+    background-color: rgb(189, 237, 237)
+    ; 
+    margin-bottom: 10px;
+}
+
+.riodejaneiro p, .riodejaneiro h2, .riodejaneiro h3 {
+    color: blue;
+}
+
+.minasgerais {
+    background-color: antiquewhite;
+}
+
+.minasgerais p, .minasgerais h2, .minasgerais h3 {
+    color: green;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redimensionar Caixa</title>
+</head>
+<style>
+  .container {
+    margin-left: 50vh;
+
+  }
+
+  #quadrado {
+    border: 4px solid black;
+
+  }
+
+  .inputs{
+    margin-left: 20vh;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <div class="inputs">
+      <label for="width">Largura (vw):</label>
+      <input type="number" id="width" step="0.1" min="0">
+
+      <label for="height">Altura (vh):</label>
+      <input type="number" id="height" step="0.1" min="0">
+
+    </div>
+    <div id="quadrado" style="width: 50vw; height: 50vh; "></div>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const largura = document.getElementById('width');
+    const altura = document.getElementById('height');
+    const quadrado = document.getElementById('quadrado');
+    const message = document.getElementById('message');
+
+    function resizequadrado() {
+      const width = parseFloat(largura.value);
+      const height = parseFloat(altura.value);
+
+      if (!isNaN(width) && !isNaN(height)) {
+        quadrado.style.width = `${width}vw`;
+        quadrado.style.height = `${height}vh`;
+        
+        
+        if ((height / 2) == width) {
+          message.textContent = 'É Quadrado!';
+          quadrado.style.backgroundColor = 'lightgreen';
+        } else {
+          message.textContent = '';
+          quadrado.style.backgroundColor = '';
+        }
+      }
+    }
+
+    
+    largura.addEventListener('input', resizequadrado);
+    altura.addEventListener('input', resizequadrado);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+body{
+    background-image: url("Marca_IFSP_2015031.png");
+
+    background-repeat: no-repeat;
+
+    background-position:center right;
+}
+
+table, td{
+    border: 2px solid black;
+    text-align: center;
+
+}
+
+.titulo {
+    text-align: center;
+}
+
+#red{
+    background-color: red;
+}
+
+#b3{
+    background-color: #b30000;
+}
+
+#l66{
+    background-color: #660000;
+}
+
+#green{
+    background-color: green;
+}
+
+#l99{
+    background-color: #99ff99;
+}
+
+#l00{
+    background-color: #004d00;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#cc{
+    background-color: #ccccff;
+}
+
+#l000{
+    background-color: #000066;
+}
+
+.tudo{
+    height: 600px;
+    background-image: url(cor.png);
+    background-repeat: repeat-x;
+    background-size: 60px;
+    background-position: bottom;
+}
+
+
+

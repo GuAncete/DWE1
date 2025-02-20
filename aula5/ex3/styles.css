@@ -1,0 +1,15 @@
+.texto{
+    background-color: aquamarine;
+    border-right: 40px solid tomato;
+    border-bottom: 20px solid tomato;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.imagem{
+    border: 20px dotted purple;
+}
+
+.imagem img{
+    border: 40px double plum;
+}

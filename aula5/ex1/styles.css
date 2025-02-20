@@ -1,0 +1,40 @@
+body{
+    background-color: aquamarine;
+}
+
+span{
+    background-color: yellow;
+}
+
+.container{
+    border: 1vh solid;
+    font-size: 2vw;
+    width: 65%;
+    background-color: white;
+    margin-bottom: 10px;
+
+}
+
+.container h1{
+    text-align: center;
+}
+
+.container li{
+    margin-left: 3%;
+}
+
+.container2 h1{
+    text-align: center;
+}
+
+.container2 li{
+    margin-left: 15px;
+}
+
+.container2{
+    border: 6px solid;
+    font-size: 14pt;
+    width: 620px;
+    background-color: white;
+
+}
